@@ -1,10 +1,12 @@
 {
-  "name": "schedulesvr",
+  "name": "scheduleSvr",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    // "dev": "cross-env NODE_ENV=dev nodemon index.js",
+    "start": "cross-env NODE_ENV=production pm2 start index.js -n scheduleSvr -e ./logs/err.log"
   },
   "repository": {
     "type": "git",
