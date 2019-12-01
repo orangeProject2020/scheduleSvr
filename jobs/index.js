@@ -18,12 +18,20 @@ class Jobs {
    * 每日收益结算
    */
   async profitDayJobUpdate() {
-    let ret = await this.request(this.domian + '/mall/profit/dayJobProfitClose')
+    let ret = await this.request(this.domian + '/mall/schedule/dayJobProfitUserClose')
     return ret
   }
 
   async profitDayJobCreate() {
-    let ret = await this.request(this.domian + '/mall/profit/dayJobProfitCreate')
+    let ret = await this.request(this.domian + '/mall/schedule/dayJobProfitUserCheck')
+    return ret
+  }
+
+  /**
+   * 每日平台收益
+   */
+  async profitDayJobPlatform() {
+    let ret = await this.request(this.domian + '/mall/schedule/profitPlatformCheck')
     return ret
   }
 
